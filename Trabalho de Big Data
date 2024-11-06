@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+media_satisfacao = dados.groupby('tipo_evento')['satisfacao'].mean()
+
+total_desperdicio = dados['desperdicio'].sum()
+
+print("Média de satisfação por tipo de evento:")
+print(media_satisfacao)
+print("\nTotal de desperdício de alimentos:")
+print(total_desperdicio)
+
+
+plt.figure(figsize=(10, 5))
+media_satisfacao.plot(kind='bar', color='skyblue')
+plt.title('Média de Satisfação por Tipo de Evento')
+plt.xlabel('Tipo de Evento')
+plt.ylabel('Média de Satisfação')
+plt.xticks(rotation=45)
+plt.grid(axis='y')
+plt.show()
+
+
